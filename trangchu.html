@@ -19,6 +19,9 @@
 </head>
 <body>
     <header>
+        <video autoplay muted loop id="bg-video">
+            <source src="/video/gfp-astro-timelapse.mp4">
+        </video>
         <div id="lang"> 
             <img src="/images/vn.png" alt="" onclick="langVN()">
             <img src="/images/us.png" alt="" onclick="langUS()">
@@ -30,15 +33,7 @@
         <nav id="nav2" class="navBar2">
             <a href="#" onclick="showmenu()"><img src="/images/menu.jpg" alt="" height="30px" width="30px"></a>
         </nav>
-        <div id="menupopup">
-            <a href="trangchu.html" style="color: #fff;">Trang chủ</a>
-            <hr style="height: 2px;">
-            <a href="#" style="color: #fff;">Giới thiệu </a>
-            <hr>
-            <a href="cackhoahoc.html" style="color: #fff;">Các khóa học</a>
-            <hr>
-            <a href="#" style="color: #fff;">Liên hệ</a>
-        </div>
+        
         <nav id="nav1" class="navBar" >
             <a href="trangchu.html" style="color: #fff;" ><span id="MENU_HOME" class="mutilang"></span></a>
             <a href="#" style="color: #fff;"><span id="MENU_ABOUT_US" class="mutilang"></span></a>
@@ -69,10 +64,10 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Địa chỉ văn phòng</h4>
+                    <h4 class="modal-title"><span id="MODAL_HEAD" class="mutilang"></span></h4>
                   </div>
                   <div class="modal-body">
-                    <p>Văn phòng: văn phòng tầng 8, tòa nhà Universial, số 900A, đường Quang Trung, Cần Thơ</p>
+                    <p><span id="MODAL_CONTENT" class="mutilang"></span></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -83,71 +78,24 @@
             </div>
             
           </div>
-       <table id="longtable" border="2" style="background-color: #fff;">
+       <table id="longtable" border="2" style="background-color: #fff; font-size: 20px;">
         <tr>
-            <td><span id="COURSES_CODE" class="mutilang"></span></td>
-            <td><span id="COURSES_COURSES" class="mutilang"></span></td>
-            <td><span id="COURSES_STARTDATE" class="mutilang"></span></td>
+            <td style="font-weight: bold; text-align:center;"><span id="COURSES_CODE" class="mutilang"></span></td>
+            <td style="font-weight: bold; text-align:center;"><span id="COURSES_COURSES" class="mutilang"></span></td>
+            <td style="font-weight: bold; text-align:center;"><span id="COURSES_STARTDATE" class="mutilang"></span></td>
         </tr>
-        <tbody id="course_listTC">
+        <tbody id="course_listTC" style="text-align: center;">
             <script>
                 showCourseList();
             </script>
         </tbody>
-        <!-- <tr>		
-            <td>CB001</td>
-            <td>Thiên Văn học Cơ Bản</td>
-            <td>30/11/2021</td>
-        </tr>
-        <tr>	
-            <td>VT002</td>
-            <td>Vũ Trụ Học Cơ Bản</td>
-            <td>01/12/2021</td>
-        </tr>
-        <tr>		
-            <td>QS001</td>
-            <td>Học Máy Và Thiên Văn Học</td>
-            <td>15/12/2021</td>
-        </tr> -->
+        
        </table>
 
-       <table border="2" id="shorttable" style="background-color: #fff;" >
-        <tr>
-            <td> 
-                <b>Mã khóa học</b> <br>
-                <b>Khóa học</b> <br>
-                <b>Ngày khai giảng</b>
-            </td>
-            <td>
-                CB001 <br>
-                Thiên Văn học Cơ Bản <br>
-                30/11/2021
-            </td>
-        </tr>
-        <tr>
-            <td> 
-                <b>Mã khóa học</b> <br>
-                <b>Khóa học</b> <br>
-                <b>Ngày khai giảng</b>
-            </td>
-            <td>
-                VT002 <br>
-                Vũ Trụ Học Cơ Bản <br>
-                01/12/2021
-            </td>
-        </tr>
-        <tr>
-            <td> 
-                <b>Mã khóa học</b> <br>
-                <b>Khóa học</b> <br>
-                <b>Ngày khai giảng</b>
-            </td>
-            <td>
-                QS001 <br>
-                Học Máy Và Thiên Văn Học <br>
-                15/12/2021
-            </td>
-        </tr>
+       <table border="2" id="shorttable" style="background-color: #fff; font-size: 20px;" >
+        <tbody id="course_listTC2">
+
+        </tbody>
        </table>
        <script>
         ready();

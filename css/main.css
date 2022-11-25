@@ -151,10 +151,13 @@ TRANG CHỦ */
     float:right;
 }
 .menuPopup{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
     margin-top: 50px;
 }
 .menuPopup a{
-    margin-left: 40%;
+    border-bottom: #fff solid 2px ;
+    margin-top: 20px;
     text-align: center;
     font-size: 30px;
 }

@@ -157,6 +157,9 @@ function mutiLanguage(){
     $("#HEAD_UPCOMING_COURSES").html(labels["HEAD_UPCOMING_COURSES"][getLang()]).attr("title",labels["HEAD_UPCOMING_COURSES"][getLang()]);
 
     $("#COPYRIGHT").html(labels["COPYRIGHT"][getLang()]).attr("title",labels["COPYRIGHT"][getLang()]);
+
+    $("#MODAL_HEAD").html(labels["MODAL_HEAD"][getLang()]).attr("title",labels["MODAL_HEAD"][getLang()]);
+    $("#MODAL_CONTENT").html(labels["MODAL_CONTENT"][getLang()]).attr("title",labels["MODAL_CONTENT"][getLang()]);
 }
 function langVN(){
     localStorage.setItem(lang, "vi-VN");

@@ -84,13 +84,51 @@ function showCourseList(){
 			}		
 		}
 	];
+	var nameList=[
+		{
+		"COURSES_COURSES":{
+            "vi-VN":"Các Khóa Học",
+            "en-US":"Courses",
+            },
+        "COURSES_CODE":{
+            "vi-VN":"Mã Khóa Học",
+            "en-US":"Course Code"
+        },
+        "COURSES_NAME":{
+            "vi-VN":"Khóa Học",
+            "en-US":"Course"
+        },
+        "COURSES_STARTDATE":{
+            "vi-VN":"Ngày Khai Giảng",
+            "en-US":"Start Date"
+        },
+        "COURSES_ENDDATE":{
+            "vi-VN":"Ngày Bế Giảng",
+            "en-US":"End Date"
+        },
+        "COURSES_FEE":{
+            "vi-VN":"Học Phí (VNĐ)",
+            "en-US":"Tuition Fee ($)"
+        },
+        "COURSES_OVERLAP":{
+            "vi-VN":"Thời gian khóa học trùng với các khóa học đã đăng ký",
+            "en-US":"The course time coincides with the registered courses"
+        }
+	}
+	];
 	var lang= getLang();
     $("#course_list").empty();
+	$("#course_list2").empty();
     $("#course_listTC").empty();
+	$("#course_listTC2").empty();
 	$.each(courseList,function(i, obj) {
 		btn="<td><div class='d-grid gap-2'> <button class='btn btn-success btn-lg'onclick='regCourse(\""+i+"\")'><i class='far fa-check-square'></i></button></div></td>";
-		$("#course_list").append("<tr><td>"+obj.code+"</td><td>"+obj.name[lang]+"</td></td><td class='text-end'>"+(new Date(obj.startDate)).toLocaleDateString(lang)+"</td><td class='text-end'>"+(new Date(obj.endDate)).toLocaleDateString(lang)+"</td><td class='text-end'>"+(new Intl.NumberFormat(lang,{ style: 'decimal'}).format(obj.fee[lang]))+"</td>"+btn+"</tr>");
-        $("#course_listTC").append("<tr><td>"+obj.code+"</td><td>"+obj.name[lang]+"</td></td><td class='text-end'>"+(new Date(obj.startDate)).toLocaleDateString(lang));
-    });
+		$("#course_list").append("<tr style='text-align:center;'><td>"+obj.code+"</td><td style='text-align:left;'>"+obj.name[lang]+"</td></td><td class='text-end'>"+(new Date(obj.startDate)).toLocaleDateString(lang)+"</td><td class='text-end'>"+(new Date(obj.endDate)).toLocaleDateString(lang)+"</td><td class='text-end'>"+(new Intl.NumberFormat(lang,{ style: 'decimal'}).format(obj.fee[lang]))+"</td>"+btn+"</tr>");
+		$("#course_list2").append("<tr><td style='font-weight: bold;'>"+nameList[0].COURSES_CODE[lang]+"<br>"+nameList[0].COURSES_COURSES[lang]+"<br>"+nameList[0].COURSES_STARTDATE[lang]+"<br>"+nameList[0].COURSES_ENDDATE[lang]+"<br>"+nameList[0].COURSES_FEE[lang]+ "</td> <td>"+obj.code+"<br>"+obj.name[lang]+"<br>"+(new Date(obj.startDate)).toLocaleDateString(lang)+"<br>"+(new Date(obj.endDate)).toLocaleDateString(lang)+"<br>"+(new Intl.NumberFormat(lang,{ style: 'decimal'}).format(obj.fee[lang]))+"<br>"+btn+"</td> </tr>");
+
+		$("#course_listTC").append("<tr><td>"+obj.code+"</td><td style='text-align:left';>"+obj.name[lang]+"</td></td><td class='text-end'>"+(new Date(obj.startDate)).toLocaleDateString(lang));
+		$("#course_listTC2").append("<tr><td style='font-weight: bold;'>"+nameList[0].COURSES_CODE[lang]+"<br>"+nameList[0].COURSES_COURSES[lang]+"<br>"+nameList[0].COURSES_STARTDATE[lang]+"</td> <td>"+obj.code+"<br>"+obj.name[lang]+"<br>"+(new Date(obj.startDate)).toLocaleDateString(lang)+"</td> </tr>");
+    
+	});
 
 }
